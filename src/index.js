@@ -18,6 +18,10 @@ app.use(
   }),
 );
 
+app.get("/", (req, res) => {
+  res.send("API working 🚀");
+});
+
 app.use("/api/auth", authRouter);
 
 app.listen(PORT, () => {

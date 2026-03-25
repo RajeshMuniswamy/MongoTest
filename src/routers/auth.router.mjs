@@ -3,7 +3,10 @@ import { login, logout, signUp } from "../controllers/auth.controllers.mjs";
 
 const router = express.Router();
 
-router.post("/signup", signUp);
+// router.post("/signup", signUp);
+router.post("/signup", (req, res) => {
+  res.send("Signup working");
+});
 router.post("/login", login);
 router.post("/logout", logout);
 
