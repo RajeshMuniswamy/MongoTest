@@ -7,13 +7,13 @@ import cors from "cors";
 dotenv.config();
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-// app.use(cors());
+
 app.use(
   cors({
-    origin: "https://pickbaskets.shop",
+    origin: ["http://localhost:5173", "https://pickbaskets.shop"],
     credentials: true,
   }),
 );
