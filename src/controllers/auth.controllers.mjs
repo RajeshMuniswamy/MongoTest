@@ -66,7 +66,11 @@ export const login = async (req, res) => {
       email: user.email,
     });
   } catch (error) {
-    console.log("singIn ", error);
+    console.log("signIn error:", error);
+    return res.status(500).json({
+      message: "Internal server error",
+      error: error.message,
+    });
   }
 };
 
